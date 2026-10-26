@@ -569,6 +569,18 @@ Si prefieres llenar el `.env` con una ventana en lugar de un editor de texto, ex
 powershell -ExecutionPolicy Bypass -File .\Configure-WhatsAppMCP.ps1
 ```
 
+Así se ve la ventana al abrirla (los datos son de ejemplo; la API key aparece como puntitos para que nadie la lea por encima de tu hombro):
+
+![Ventana de configuración recién abierta, con los campos URL de Evolution, API key, instancia, número, equipo, timeout y puerto](docs/images/config-ventana.png)
+
+Después de llenar los campos, pulsa **Probar conexión**. Si todo está bien, abajo de los botones aparece en verde `Estado: open` (WhatsApp vinculado y listo):
+
+![Ventana después de probar la conexión, con el mensaje verde "Estado: open"](docs/images/config-conexion-ok.png)
+
+Si la API key no coincide con la de Evolution, verás un mensaje rojo como este; corrige la clave y vuelve a probar (la ventana nunca muestra tu clave en los mensajes):
+
+![Ventana con el mensaje rojo "API key rechazada (HTTP 401)"](docs/images/config-clave-rechazada.png)
+
 Qué hace:
 
 - Lee el archivo `.env` y muestra sus valores en campos (la API key va oculta).
