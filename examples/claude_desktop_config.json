@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "whatsapp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--env-file",
+        "C:\\ruta\\a\\neto-whatsappmcp\\.env",
+        "whatsapp-mcp"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.git
+engineering
+examples
+*.md
+.env.bak

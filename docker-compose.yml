@@ -1,0 +1,23 @@
+# Servidor MCP de WhatsApp (modo HTTP). La URL de Evolution viene de .env,
+# escrita desde la perspectiva del host (p. ej. http://localhost:8080).
+services:
+  whatsapp-mcp:
+    build: .
+    image: whatsapp-mcp
+    container_name: whatsapp_mcp
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MCP_TRANSPORT=http
+      # Dentro del contenedor debe escuchar en todas las interfaces; el host solo publica 127.0.0.1
+      - MCP_HOST=0.0.0.0
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "127.0.0.1:${MCP_PORT:-8787}:${MCP_PORT:-8787}"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:${MCP_PORT:-8787}/healthz || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

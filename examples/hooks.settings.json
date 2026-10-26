@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt|idle_prompt|elicitation_dialog|agent_needs_input",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\ruta\\a\\neto-whatsappmcp\\examples\\hook-notify.ps1\"",
+            "timeout": 40
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\ruta\\a\\neto-whatsappmcp\\examples\\hook-notify.ps1\"",
+            "timeout": 40
+          }
+        ]
+      }
+    ]
+  }
+}

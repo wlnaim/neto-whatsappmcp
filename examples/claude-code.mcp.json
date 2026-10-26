@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "whatsapp": {
+      "type": "http",
+      "url": "http://127.0.0.1:8787/mcp"
+    },
+    "whatsapp-stdio": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--env-file",
+        "C:\\ruta\\a\\neto-whatsappmcp\\.env",
+        "whatsapp-mcp"
+      ]
+    }
+  }
+}

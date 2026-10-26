@@ -147,3 +147,7 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# WhatsAppMCP: archivos locales que nunca se publican
+.env.bak
+.code-review-graph/
